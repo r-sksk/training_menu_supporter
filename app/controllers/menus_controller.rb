@@ -1,5 +1,6 @@
 class MenusController < ApplicationController
   def index
+    @menus = Menu.all
   end
 
   def show
@@ -11,12 +12,20 @@ class MenusController < ApplicationController
   end
 
   def edit
+    @menu = Menu.find(params[:id])
+
   end
 
   def create
     @menu = Menu.new(menu_params)
     @menu.user_id = current_user.id
     @menu.save
+    redirect_to menu_path(@menu)
+  end
+
+  def update
+    @menu = Menu.find(params[:id])
+    @menu.update(menu_params)
     redirect_to menu_path(@menu)
   end
 
