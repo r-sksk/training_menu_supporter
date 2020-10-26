@@ -47,3 +47,10 @@
     </div>
   </div>
 </section>
+
+<% @user.menus.each do |menu| %>
+  <%= attachment_image_tag menu, :image %>
+  <%= link_to "詳細を見る", menu_path(menu) %>
+  <%= link_to "編集する", edit_menu_path(menu) %>
+  <%= link_to "削除する",  menu_path(menu), method: :delete, data: {confirm: "削除しますか？"} %>
+<% end %>

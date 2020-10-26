@@ -35,15 +35,22 @@
         </div>
       </div>
 
-    <% if user_signed_in?%>
+    <% if user_signed_in? %>
       <div id="navbarExampleTransparentExample" class="navbar-menu">
         <div class="navbar-item">
+          <%= link_to "トレーニングメニュー一覧", menus_path, class: "navbar-item button is-warning" %>
+        </div>
+        <div class="navbar-item">
+          <%= link_to "新規投稿", new_menu_path, class: "navbar-item button is-warning" %>
         </div>
           <div class="navbar-end">
             <div class="navbar-item">
               <div class="field is-grouped">
                 <p class="control">
-                <%= link_to "ユーザー一覧", users_path, class: "button is-danger is-ligth" %>
+                  <%= link_to "ユーザー一覧", users_path, class: "button is-danger is-ligth" %>
+                </p>
+                <p class="control">
+                  <%= link_to "マイページ", user_path(current_user), class: "button is-danger is-ligth" %>
                 </p>
                 <p class="control">
                   <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "button is-danger" %>
@@ -54,12 +61,15 @@
       </div>
     <% else %>
     <div id="navbarExampleTransparentExample" class="navbar-menu">
+      <div class="navbar-item">
+          <%= link_to "トレーニングメニュー一覧", menus_path, class: "navbar-item button is-warning" %>
+      </div>
+      <div class="navbar-item">
+        <%= link_to "ユーザー一覧", users_path, class: "navbar-item button is-danger is-light" %>
+      </div>
       <div class="navbar-end">
         <div class="navbar-item">
           <div class="field is-grouped">
-            <p class="control">
-              <%= link_to "ユーザー一覧", users_path, class: "button is-danger is-light" %>
-            </p>
             <p class="control">
               <%= link_to "ログイン", new_user_session_path, class: "button is-warning" %>
             </p>
