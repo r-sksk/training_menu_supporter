@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :authenticate_user!, except: [:index]  #ログインしていないユーザーはindex画面しか閲覧できない→ログイン画面へ
   def index
     @users = User.all
   end

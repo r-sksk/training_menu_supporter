@@ -17,5 +17,16 @@
  @import "bulma";
 
  .notification:not(:last-child){
-	margin-bottom: 0;
+    margin-bottom: 0;
+}
+
+ .profile_image {
+    border-radius: 50%;
+ }
+
+ .main-image {
+	height: 940px;
+	background-image: url(training.png);
+	background-repeat: none;
+	background-size: contain;
 }
