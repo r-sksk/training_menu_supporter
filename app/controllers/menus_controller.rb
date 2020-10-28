@@ -2,7 +2,7 @@ class MenusController < ApplicationController
   before_action :authenticate_user!, except: [:index] #ログインしていないユーザーはindex以外は閲覧できない→ログイン画面へ
 
   def index
-    @menus = Menu.all
+    @menus = Menu.all.page(params[:page])
   end
 
   def show
