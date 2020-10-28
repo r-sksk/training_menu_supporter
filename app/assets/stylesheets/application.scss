@@ -24,15 +24,15 @@
     border-radius: 50%;
  }
 
- .section {
-	 background-color: blue;
- }
-
  .main-image {
 	height: 940px;
 	background-image: url(training.png);
 	background-repeat: none;
 	background-size: cover;
+}
+
+.is-size-1 {
+	color:#fff;
 }
 
 .title {
@@ -47,7 +47,8 @@
 
 	/* フッタの高さ */
 	text-align: center;
+	padding: 20px;
 	height: 60px;
 	background: #000;
 	color: #fff;
-  }
+}
