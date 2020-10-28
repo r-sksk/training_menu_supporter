@@ -41,7 +41,7 @@
           <%= link_to "トレーニングメニュー一覧", menus_path, class: "navbar-item button is-warning" %>
         </div>
         <div class="navbar-item">
-          <%= link_to "新規投稿", new_menu_path, class: "navbar-item button is-warning" %>
+          <%= link_to "新規投稿", new_menu_path, class: "navbar-item button is-success" %>
         </div>
           <div class="navbar-end">
             <div class="navbar-item">
@@ -50,7 +50,7 @@
                   <%= link_to "ユーザー一覧", users_path, class: "button is-danger is-ligth" %>
                 </p>
                 <p class="control">
-                  <%= link_to "マイページ", user_path(current_user), class: "button is-danger is-ligth" %>
+                  <%= link_to "マイページ", user_path(current_user), class: "button is-warning is-ligth" %>
                 </p>
                 <p class="control">
                   <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "button is-danger" %>
