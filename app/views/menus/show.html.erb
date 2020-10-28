@@ -33,6 +33,16 @@
                   <td><%= simple_format @menu.body %></td>
                 </tr>
               </table>
+              <% if current_user.already_favorited?(@menu) %>
+                <%= link_to menu_favorites_path(@menu), method: :delete do %>
+                  <i class ="fas fa-heart"></i>
+                <% end %>
+              <% else %>
+                <%= link_to menu_favorites_path(@menu), method: :post do %>
+                  <i class ="far fa-heart"></i>
+                <% end %>
+              <% end %>
+              <%= @menu.favorites.count %>
               <% if @menu.user_id == current_user.id %>
                 <%= link_to "編集",edit_menu_path(@menu), class: "button is-success" %>
               <% end %>

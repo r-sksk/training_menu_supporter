@@ -33,6 +33,16 @@
                   <div class="media-content">
                     <div class="title"><%=link_to menu.user.username, user_path(menu.user.id) %></div>
                   </div>
+                  <% if current_user.already_favorited?(menu) %>
+                    <%= link_to menu_favorites_path(menu), method: :delete do %>
+                      <i class ="fas fa-heart"></i>
+                    <% end %>
+                  <% else %>
+                    <%= link_to menu_favorites_path(menu), method: :post do %>
+                      <i class ="far fa-heart"></i>
+                    <% end %>
+                  <% end %>
+                  <%= menu.favorites.count %>
                 </div>
 
                 <div class="content">
