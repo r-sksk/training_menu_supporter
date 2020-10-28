@@ -31,7 +31,7 @@
                     </figure>
                   </div>
                   <div class="media-content">
-                    <div class="title"><%=link_to menu.user.username, user_path(menu.user.id) %></div>
+                    <div class="title"><%=link_to menu.title, menu_path(menu) %></div>
                   </div>
                   <% if current_user.already_favorited?(menu) %>
                     <%= link_to menu_favorites_path(menu), method: :delete do %>
@@ -52,7 +52,7 @@
             </div>
           </div>
         <% end %>
-        <%= paginate @menus %>
       </div>
     </div>
+    <div class="pagination"><%= paginate @menus %></div>
 </section>
