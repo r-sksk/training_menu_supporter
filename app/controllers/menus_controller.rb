@@ -2,7 +2,7 @@ class MenusController < ApplicationController
   before_action :authenticate_user!  #ログインしていないユーザーはログイン画面へ
 
   def index
-    @menus = Menu.all.page(params[:page]).per(12).search(params[:search])
+    @menus = Menu.all.page(params[:page]).per(12).search(params[:search]).order('created_at DESC')
   end
 
   def show

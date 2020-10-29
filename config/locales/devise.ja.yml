@@ -62,6 +62,7 @@ ja:
         subject: 'アカウントの凍結解除'
 #        subject: 'Unlock Instructions'
 
+
       ja:
         activerecord:
           attributes:
