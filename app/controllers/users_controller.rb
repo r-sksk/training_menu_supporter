@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   before_action :authenticate_user!, except: [:index]  #ログインしていないユーザーはindex画面しか閲覧できない→ログイン画面へ
 
   def index
-    @users = User.all.page(params[:page]).per(12)
+    @users = User.all.page(params[:page]).per(12).search(params[:search])
   end
 
   def show
