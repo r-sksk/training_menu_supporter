@@ -24,7 +24,7 @@
                 <td class="is-size-4">
                   <strong><%= @user.username %></strong>
                 </td>
-                <% if @user.id == current_user.id %>
+                <% if @user.id == current_user.id || current_user.admin? %>
                 <td class="is-size-4">
                   <%= @user.email %>
                 </td>
