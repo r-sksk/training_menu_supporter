@@ -4,8 +4,16 @@ class Menu < ApplicationRecord
     attachment :image
 
     with_options presence: true do
-     validates :title
-     validates :body
+      validates :title
+      validates :body
+    end
+
+    def self.search(search) #検索をする
+      if search
+        where(['title LIKE ?',"%#{search}%"]) #検索とtitleの部分一致を表示
+      else
+        all
+      end
     end
 
 end
