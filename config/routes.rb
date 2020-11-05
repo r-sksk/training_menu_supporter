@@ -5,5 +5,6 @@ Rails.application.routes.draw do
   resources :menus do
     resource :favorites, only: [:create, :destroy]  #いいね機能のルート
   end
+  post '/home/guest_sign_in', to: 'home#new_guest' #ゲストユーザーログイン機能のルート
 
 end
