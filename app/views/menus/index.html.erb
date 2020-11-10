@@ -35,8 +35,11 @@
                     </figure>
                   </div>
                   <div class="media-content">
-                    <div class="title"><%=link_to menu.title, menu_path(menu) %></div>
+                    <div class="title is-5"><%=link_to menu.title, menu_path(menu) %></div>
                   </div>
+                </div>
+                <div class="content">
+                  <time><%= menu.updated_at.strftime("%Y-%m-%d %H:%M") %></time>更新
                   <% if current_user.already_favorited?(menu) %>
                     <%= link_to menu_favorites_path(menu), method: :delete do %>
                       <i class ="fas fa-heart"></i>
@@ -47,10 +50,6 @@
                     <% end %>
                   <% end %>
                   <%= menu.favorites.count %>
-                </div>
-
-                <div class="content">
-                  <time><%= menu.updated_at.strftime("%Y-%m-%d %H:%M") %></time>更新
                 </div>
               </div>
             </div>

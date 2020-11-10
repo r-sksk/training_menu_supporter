@@ -15,7 +15,7 @@
         <div class="columns is-centered">
           <div class="column is-4">
             <figure class="image is-128x128"  style="margin-left: auto; margin-right: auto;">
-              <%= attachment_image_tag @user, :profile_image, fallback: "no-image.png", class: "profile_image is-rounded" %>
+              <%= attachment_image_tag @user, :profile_image, fallback: "no-image.png", class: "profile_image" %>
             </figure>
           </div>
           <div class="column is-8">
@@ -61,13 +61,13 @@
           <div class="card">
             <div class="card-image">
               <figure class="image is-4by3">
-                <%= attachment_image_tag menu, :image,:image, fallback: "no-image.png" %>
+                <%= attachment_image_tag menu, :image, fallback: "no-image.png" %>
               </figure>
             </div>
             <div class="card-content">
               <div class="media">
                 <div class="media-content">
-                  <%= menu.title %>
+                  <div class="title is-5"> <%= menu.title %> </div>
                   <%= link_to menu_path(menu), class: "panel-block" do %>
                     <span class="panel-icon"><i class="fas fa-book"></i></span>
                       この投稿の詳細へ
