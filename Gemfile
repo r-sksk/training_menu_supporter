@@ -49,8 +49,6 @@ group :development do
 
 end
 
-gem 'pg', '~> 0.19.0', group: :production
-
 group :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '>= 2.15'
@@ -67,3 +65,7 @@ gem "refile", require: "refile/rails", github: 'manfe/refile'
 gem "refile-mini_magick"
 gem "bulma-rails"
 gem 'kaminari'
+
+group :production do
+  gem 'pg'
+end
